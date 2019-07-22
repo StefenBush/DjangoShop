@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin 2 - Register</title>
+  <title>Admin 2 - Login</title>
 
   <!-- Custom fonts for this template-->
   <link href="/static/store/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                <h1 class="h4 text-gray-900 mb-4">Login!</h1>
               </div>
               <form class="user" method="post">
                   {% csrf_token %}
@@ -51,7 +51,7 @@
                     <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password">
                 </div>
                   <div class="form-group">
-                    <input type="submit" class="btn btn-primary btn-user btn-block" value="注册">
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="登录">
                 </div>
 {#                  <div class="col-sm-6">#}
 {#                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">#}
@@ -71,10 +71,10 @@
               <hr>
               <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
-              </div>
+              </div><div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
               <div class="text-center">
-                <a class="small" href="/Store/login/">Already have an account? Login!</a>
-              </div>
+                <a class="small" href="/Store/register/">没有账号，去注册！</a>
+              </div><div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
             </div>
           </div>
         </div>
