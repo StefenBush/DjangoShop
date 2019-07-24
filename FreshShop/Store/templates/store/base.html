@@ -27,6 +27,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
+
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
@@ -41,28 +42,21 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
+
+      {% if request.COOKIES.has_store %}
       <li class="nav-item">
-          {% if is_store %}
-        <a class="nav-link" href="index.html">
+
+        <a class="nav-link" href="/Store/index/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>店铺管理</span>
         </a>
-          {% else %}
-          <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>没有店铺注册一个</span>
-          </a>
-          {% endif %}
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
-
       <!-- Heading -->
       <div class="sidebar-heading">
         销售管理
       </div>
-
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -74,10 +68,17 @@
             <h6 class="collapse-header">商品管理:</h6>
             <a class="collapse-item" href="/Store/add_goods">添加商品</a>
             <a class="collapse-item" href="/Store/list_goods">商品列表</a>
-              <a class="collapse-item" href="cards.html">商品详情</a>
           </div>
         </div>
       </li>
+        {% else %}
+      <li class="nav-item">
+          <a class="nav-link" href="/Store/register_store/">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>没有店铺注册一个</span>
+          </a>
+      </li>
+
 
       <!-- Nav Item - Utilities Collapse Menu -->
 
@@ -86,7 +87,7 @@
 {#      <hr class="sidebar-divider">#}
 
 
-
+        {% endif %}
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -98,7 +99,7 @@
 
     </ul>
     <!-- End of Sidebar -->
-
+{#  {% endif %}#}
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
